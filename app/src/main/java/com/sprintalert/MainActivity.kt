@@ -115,18 +115,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestPermissions() {
-        val permissions = arrayOf(
+        val permissions = mutableListOf(
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.VIBRATE
         )
         
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            permissions.plus(Manifest.permission.FOREGROUND_SERVICE_LOCATION)
+            permissions.add(Manifest.permission.FOREGROUND_SERVICE)
         }
 
         val permissionsToRequest = permissions.filter {
-            ContextCompat.checkSelfPermission(this, it) != android.content.pm.PackageManager.PERMISSION_GRANTED
+            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
         }
 
         if (permissionsToRequest.isNotEmpty()) {
