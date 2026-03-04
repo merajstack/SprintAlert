@@ -36,8 +36,15 @@ jobs:
         chmod +x gradlew
         ./gradlew assembleRelease -x lint --no-daemon
     
+    - name: List build outputs
+      if: always()
+      run: |
+        find app/build/outputs -name "*.apk" -type f
+        ls -la app/build/outputs/apk/release/ 2>/dev/null || echo "Release directory not found"
+    
     - name: Upload APK
       uses: actions/upload-artifact@v4
+      if: always()
       with:
         name: app-release
         path: app/build/outputs/apk/release/app-release.apk
