@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SprintAlert</string>
+    <string name="start_button">START</string>
+    <string name="stop_button">STOP</string>
+    <string name="reset_button">RESET</string>
+    <string name="distance_label">Distance Target</string>
+    <string name="time_label">Time</string>
+    <string name="history_label">History</string>
+    <string name="best_times_label">Best Times</string>
+    <string name="settings_label">Settings</string>
+    <string name="meters">meters</string>
+    <string name="seconds">seconds</string>
+    <string name="delete">Delete</string>
+    <string name="alert_title">Sprint Complete!</string>
+    <string name="alert_message">Target distance reached!</string>
+    <string name="gps_initializing">Initializing GPS...</string>
+    <string name="gps_ready">GPS Ready</string>
+    <string name="gps_no_fix">Waiting for GPS...</string>
+    <string name="location_permission_denied">Location permission required</string>
+    <string name="no_records">No records yet</string>
+</resources>
