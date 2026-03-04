@@ -6,7 +6,7 @@ import kotlin.math.*
 object DistanceCalculator {
     // Haversine formula for accurate GPS distance calculation
     fun calculateDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Float {
-        val EARTH_RADIUS_METERS = 6371000f
+        val EARTH_RADIUS_METERS = 6371000.0
         
         val dLat = Math.toRadians(lat2 - lat1)
         val dLon = Math.toRadians(lon2 - lon1)
@@ -16,7 +16,7 @@ object DistanceCalculator {
                 sin(dLon / 2) * sin(dLon / 2)
         
         val c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        return EARTH_RADIUS_METERS * c
+        return (EARTH_RADIUS_METERS * c).toFloat()
     }
 
     fun calculateSpeed(distanceMeters: Float, timeSeconds: Float): Float {
